@@ -1,0 +1,112 @@
+<script>
+/*
+Being able to use an Object as a key is an important Map feature.
+A Map holds key-value pairs where the keys can be any datatype.
+A Map remembers the original insertion order of the keys.
+A Map has a property that represents the size of the map.
+
+You can create a JavaScript Map by:
+
+Passing an Array to new Map()
+Create a Map and use Map.set()
+
+
+JavaScript Objects  vs      Maps
+Differences between JavaScript Objects and Maps:
+
+		Object								Map
+emp={id:102,name:"Shyam Kumar"}  const fruits=new Map([["apples", 500],["bananas", 300]]);
+		
+1) Iterable	
+Not directly iterable	               Directly iterable
+
+2)Size	
+Do not have a size property				Have a size property
+
+3) Key Types	
+Keys must be Strings (or Symbols)		Keys can be any datatype
+
+4) Key Order	
+Keys are not well ordered				Keys are ordered by insertion
+
+5)Defaults	
+Have default keys						Do not have default keys
+
+
+
+*/
+</script>
+
+<p id="demo"></p>
+
+<script>
+// Create a Map
+/*
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+*/
+//document.getElementById("demo").innerHTML = fruits; // define object of type
+//document.getElementById("demo").innerHTML = fruits.size; 
+//document.getElementById("demo").innerHTML = fruits.get('bananas'); 
+
+/*
+// Create a Map then set values 
+const fruits = new Map();
+
+// Set Map Values
+fruits.set("apples", 500);
+fruits.set("bananas", 300);
+fruits.set("oranges", 200);
+
+document.getElementById("demo").innerHTML = fruits.get("apples");
+
+// also you can set or change value of map
+
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+
+fruits.set("apples", 200);
+
+
+// also you can delete fruits.delete("apples");
+
+// Clear the Map
+fruits.clear();
+
+
+//The has() method returns true if a key exists in a Map:
+document.getElementById("demo").innerHTML = fruits.has("apples");
+
+
+//typeof returns object:
+
+
+
+
+
+*/
+</script>
+
+<p id="demo"></p>
+
+<script>
+// Create a Map
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+
+let text = "";
+fruits.forEach (function(value, key) {
+  text += key + ' = ' + value + "<br>"
+})
+
+document.getElementById("demo").innerHTML = text;
+</script>

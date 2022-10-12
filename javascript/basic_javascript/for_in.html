@@ -1,0 +1,114 @@
+
+<!--
+
+JSON Objects
+JSON objects are written inside curly braces.
+Just like in JavaScript, objects can contain multiple name/value pairs:
+
+For In : The JavaScript for in statement loops through the properties of an Object:
+
+focus on key as per key print
+
+The for in loop iterates over a person object
+Each iteration returns a key (x)
+The key is used to access the value of the key
+The value of the key is person[x]
+
+for (key in object) 
+{
+  // code block to be executed
+}
+
+-->
+<button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+
+<script>
+function myFunction() 
+{
+  var person = {fname:"John", lname:"Doe", age:25}; 
+  
+  var text = "";
+  for (var x in person) {
+    text=text+person[x];
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+
+var object = { a: 1, b: 2, c: 3 };
+for (var property in object) 
+{
+  //document.write(property); 
+  //document.write(object[property]);
+}
+</script>
+
+
+
+<!--
+Array.forEach()
+The forEach() method calls a function (a callback function) 
+once for each array element.
+
+Note that the function takes 3 arguments:
+
+The item value
+The item index
+The array itself
+onst numbers = [45, 4, 9, 16, 25];
+
+numbers.forEach()
+
+-->
+
+<p id="value"></p>
+<p id="key"></p>
+<script>
+const numbers = [45, 4, 9, 16, 25];
+
+let val = "";
+let key ="";
+
+function myFunction(value, index, array) {
+  val += value+ "<br>";
+  key += index + "<br>";
+}
+
+numbers.forEach(myFunction);
+document.getElementById("value").innerHTML =val;
+document.getElementById("key").innerHTML =key;
+
+</script>
+
+
+<!--
+The For Of Loop
+
+Only focus on values
+
+The JavaScript for of statement loops through the values of an iterable object.
+
+It lets you loop over iterable data structures such as 
+Arrays, Strings, Maps, NodeLists, and more:
+variable - For every iteration the value of the next property is assigned to the variable. 
+Variable can be declared with const, let, or var.
+
+iterable - An object that has iterable properties.
+for (variable of iterable) 
+{
+  // code block to be executed
+}
+-->
+
+<script>
+const number = [10, 20, 30];
+
+for (const value of number) {
+  document.write(value + "<br>");
+}
+
+const string = "Raj Nagar";
+for (const value1 of string) {
+  document.write(value1);
+}
+</script>

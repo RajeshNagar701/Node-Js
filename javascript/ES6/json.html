@@ -1,0 +1,147 @@
+<!--
+What is JSON?
+JSON stands for JavaScript Object Notation
+JSON is a lightweight data interchange format
+JSON is language independent *
+JSON is "self-describing" and easy to understand
+
+* The JSON syntax is derived from JavaScript object notation syntax, 
+but the JSON format is text only. Code for reading and generating JSON data can be written in any programming language.
+
+JSON Syntax Rules
+
+Data is in name/value pairs
+Data is separated by commas
+Curly braces hold objects
+Square brackets hold arrays
+
+
+{"employees":{"firstName":"John","lastName":"Doe" }}
+
+{"employees":[
+  { "firstName":"John", "lastName":"Doe" },
+  { "firstName":"Anna", "lastName":"Smith" },
+  { "firstName":"Peter", "lastName":"Jones" }
+]}
+
+let json ='{"employees":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}'
+
+let jsonData = `
+      {"products": [
+			{
+				"id": 1,
+				"productName": "Apple",
+				"Qty": 100
+			},
+			{
+				"id": 2,
+				"productName": "Pineapple",
+				"Qty": 120
+			},
+			{
+				"id": 3,
+				"productName": "Mango",
+				"Qty": 10
+			}
+		]
+	}
+        `;
+-->
+
+
+<h2>Create Object from JSON String</h2>
+
+<p id="demo"></p>
+
+<script>
+/*
+let txt = '{"name":"John", "age":30, "city":"New York"}';
+const obj = JSON.parse(txt);
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+*/
+</script>
+
+<!--
+Use the JavaScript function JSON.parse() to convert text into a JavaScript object:
+const obj = JSON.parse('{"name":"John", "age":30, "city":"New York"}');
+-->
+<script>
+
+//Converting a JSON Text to a JavaScript Object
+
+let json = '{"employees":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+
+const obj = JSON.parse(json); // conver json in to javascript object
+document.getElementById("demo").innerHTML =
+obj.employees[1].firstName + " " + obj.employees[1].lastName;
+</script>
+
+
+<script>
+/*
+const text = '["Ford", "BMW", "Audi", "Fiat"]';
+const myArr = JSON.parse(text);
+document.getElementById("demo").innerHTML = myArr; 
+*/
+</script>
+
+<!--
+Use the JavaScript function JSON.stringify() to convert it into a string.
+-->
+<script>
+/*
+const obj = {name: "John", age: 30, city: "New York"};
+const myJSON = JSON.stringify(obj); // convert obj to json 
+document.getElementById("demo").innerHTML = myJSON;
+*/
+
+/*
+const arr = ["John", "Peter", "Sally", "Jane"];
+const myJSON = JSON.stringify(arr);
+document.getElementById("demo").innerHTML = myJSON;
+*/
+</script>
+
+
+
+<script>
+/*
+const text = '{"name":"John", "birth":"1986-12-14", "city":"New York"}';
+const obj = JSON.parse(text, function (key, value) {
+  if (key == "birth") {
+    return new Date(value);
+  } else {
+    return value;
+  }
+});
+
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.birth;
+*/
+</script>
+
+
+<script>
+/*
+Parsing Functions
+Functions are not allowed in JSON.
+If you need to include a function, write it as a string.
+You can convert it back into a function later:
+*/
+
+/*
+const text = '{"name":"John", "age":"function () {return 30;}", "city":"New York"}';
+const obj = JSON.parse(text);
+obj.age = eval("(" + obj.age + ")");
+
+document.getElementById("demo").innerHTML = obj.name + ", " + obj.age();
+*/
+</script>
+
+
+

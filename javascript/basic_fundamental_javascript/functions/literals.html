@@ -1,0 +1,32 @@
+<!--
+A function literal is an expression that defines an unnamed function.
+
+Syntax
+The syntax for a function literal is much like a function statement, 
+except that it is used as an expression rather than a statement and no 
+function name is required.
+
+ var variablename = function(Argument List) 
+ {
+         Function Body 
+ };
+
+-->
+
+<script>
+
+var func = function(x,y) 
+{ 
+    return x*y 
+};
+document.write(func(5,7));
+
+function secondFunction() 
+{
+   var result;
+   result = func(10,20);
+   document.write(result);
+}
+secondFunction() 
+
+</script>
